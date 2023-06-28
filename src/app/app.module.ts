@@ -6,6 +6,12 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FilenavComponent } from './filenav/filenav.component';
+import { FileopenComponent } from './fileopen/fileopen.component';
+import { TitleComponent } from './title/title.component';
+import { TextareaComponent } from './textarea/textarea.component';
+import { GeneratedQuestionComponent } from './generated-question/generated-question.component';
+import { QuestionComponent } from './question/question.component';
+
 
 
 @NgModule({
@@ -13,7 +19,13 @@ import { FilenavComponent } from './filenav/filenav.component';
     AppComponent,
 
     HeaderComponent,
-    FilenavComponent
+    FilenavComponent,
+    FileopenComponent,
+    TitleComponent,
+    TextareaComponent,
+    GeneratedQuestionComponent,
+    QuestionComponent,
+
 
   ],
   imports: [
