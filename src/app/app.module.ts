@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FilenavComponent } from './filenav/filenav.component';
+import { FilegroupComponent } from './filegroup/filegroup.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FilenavComponent } from './filenav/filenav.component';
     AppComponent,
 
     HeaderComponent,
-    FilenavComponent
+    FilenavComponent,
+    FilegroupComponent
 
   ],
   imports: [
