@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./filenav.component.sass']
 })
 export class FilenavComponent {
+  groupnames: string[] = ["groupname 1", "groupname 2", "groupname 3", "groupname 4", "groupname 5"];
 
 }

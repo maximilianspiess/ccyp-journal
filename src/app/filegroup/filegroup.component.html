@@ -1,5 +1,10 @@
 <div class="container">
-  <div class="text">
-    <p>filegroup works!asdfasdfasdfas dfasfasdf asdf a asdfasf asflökjw sdfasdfasf</p>
+  <div class="title-delete">
+    <h4 class="filegroup-title">{{ groupname }}</h4>
+    <button class="fileButton delete">+</button>
   </div>
+  <div *ngFor="let filename of filenames">
+    <p class="text">{{ filename }}</p>
+  </div>
+  <button class="fileButton">+</button>
 </div>
