@@ -18,7 +18,7 @@ import { QuestionComponent } from './question/question.component';
     AppComponent,
     HeaderComponent,
     FilenavComponent,
-    FilegroupComponent
+    FilegroupComponent,
     FileopenComponent,
     TitleComponent,
     TextareaComponent,
