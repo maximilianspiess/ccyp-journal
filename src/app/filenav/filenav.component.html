@@ -1,4 +1,5 @@
 <div class="container">
-  <app-filegroup></app-filegroup>
-  <app-filegroup></app-filegroup>
+  <div class="filegroup-container" *ngFor="let groupname of groupnames">
+    <app-filegroup [groupname]="groupname"></app-filegroup>
+  </div>
 </div>
