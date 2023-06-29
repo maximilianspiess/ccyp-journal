@@ -8,19 +8,25 @@ import { HeaderComponent } from './header/header.component';
 import { FilenavComponent } from './filenav/filenav.component';
 import { FilegroupComponent } from './filegroup/filegroup.component';
 import { LoginComponent } from './login/login.component';
+import { ApplikationComponent } from './applikation/applikation.component';
+import {RouterModule, Routes} from "@angular/router";
 
+const appRoutes: Routes = [
+  {path: "home", component: ApplikationComponent},
+  {path: "", component: LoginComponent, pathMatch: "full"}
+]
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FilenavComponent,
     FilegroupComponent,
-    LoginComponent
-
+    LoginComponent,
+    ApplikationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
