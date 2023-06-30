@@ -1,4 +1,7 @@
 import {Component, Input} from '@angular/core';
+import {FilegroupService} from "../filegroup.service";
+import {Observable} from "rxjs";
+import {File} from "../model/files.model";
 
 @Component({
   selector: 'app-filegroup',
@@ -7,7 +10,23 @@ import {Component, Input} from '@angular/core';
 })
 export class FilegroupComponent {
 
-  @Input() groupname = "";
-  filenames: string[] = ["title 1", "title 2", "title 3"];
+  @Input() group;
+  files: File[] = [];
+
+  constructor(private provider: FilegroupService) {}
+
+  ngOnInit(): void {
+    this.provider.getFilesInGroup(this.group.id).subscribe(response => {
+      response.forEach(file => this.files.push(file))
+    })
+  }
+
+  addFileToGroup(): void {
+    this.provider.getAllFiles().subscribe(response => {
+      response.forEach(file => this.files.push(file));
+    });
+  }
+
+
 
 }
