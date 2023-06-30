@@ -10,10 +10,14 @@ import { FilegroupComponent } from './filegroup/filegroup.component';
 import { LoginComponent } from './login/login.component';
 import { ApplikationComponent } from './applikation/applikation.component';
 import {RouterModule, Routes} from "@angular/router";
+import { RegisterComponent } from './register/register.component';
+import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   {path: "home", component: ApplikationComponent},
-  {path: "", component: LoginComponent, pathMatch: "full"}
+  {path: "", component: LoginComponent, pathMatch: "full"},
+  {path: "register", component: RegisterComponent},
+  {path: "", component: RegisterComponent, pathMatch: "full"}
 ]
 @NgModule({
   declarations: [
@@ -22,11 +26,13 @@ const appRoutes: Routes = [
     FilenavComponent,
     FilegroupComponent,
     LoginComponent,
-    ApplikationComponent
+    ApplikationComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

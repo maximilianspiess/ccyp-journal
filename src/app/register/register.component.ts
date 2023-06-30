@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.sass']
 })
-export class LoginComponent {
-
+export class RegisterComponent {
   constructor(private router: Router) {
   }
 
@@ -17,9 +16,6 @@ export class LoginComponent {
 
   onSave(){
     this.router.navigateByUrl("home")
-  }
-  onRegister(){
-    this.router.navigateByUrl("register")
   }
 
 }
