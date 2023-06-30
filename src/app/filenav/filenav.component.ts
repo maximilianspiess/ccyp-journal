@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FilegroupService} from "../filegroup.service";
-import {Group} from "../model/group.model";
+import {Group} from "./group.model";
 
 @Component({
   selector: 'app-filenav',
