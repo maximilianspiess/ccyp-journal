@@ -1,7 +1,5 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {HttpClientModule} from '@angular/common/http';
-import {ApiService} from "./api.service";
 
 @Component({
   selector: 'app-generated-question',
