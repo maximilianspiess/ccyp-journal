@@ -3,6 +3,7 @@ $font-size-15: 0.9375em
 $font-size-18: 1.125em
 
 $color-delete-add: #343A3F40
+$color-delete-add-hover: #343A3FBF
 
 .container
   display: flex
@@ -36,13 +37,23 @@ $color-delete-add: #343A3F40
   width: 1.5*$font-size-18
   height: auto
   border: none
+  outline: none
   background-color: inherit
   margin-left: -0.5*$font-size-18
   padding: 0
   text-align: center
   font-size: $font-size-18
-  color: #343A3F40
+  color: $color-delete-add
+  transition: all 0.25s
+
+.fileButton:hover
+  color: $color-delete-add-hover
+  transform: rotate(90deg)
 
 .delete
-  transform: rotate(45deg)
   margin: 0 -0.75*$font-size-18 0 0
+  transform: rotate(45deg)
+
+.delete:hover
+  color: $color-delete-add-hover
+  transform: rotate(135deg)

@@ -1,10 +1,10 @@
 <div class="container">
   <div class="title-delete">
-    <h4 class="filegroup-title">{{ groupname }}</h4>
-    <button class="fileButton delete">+</button>
+    <h4 class="filegroup-title">{{ group.group_name }}</h4>
+    <button type="button" class="fileButton delete">+</button>
   </div>
-  <div *ngFor="let filename of filenames">
-    <p class="text">{{ filename }}</p>
+  <div *ngFor="let file of files">
+    <p class="text">{{ file.file_name }}</p>
   </div>
-  <button class="fileButton">+</button>
+  <button type="button" (click)="addFileToGroup()" class="fileButton">+</button>
 </div>

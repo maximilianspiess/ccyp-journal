@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FilegroupService} from "../filegroup.service";
+import {Group} from "../model/group.model";
 
 @Component({
   selector: 'app-filenav',
@@ -6,6 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./filenav.component.sass']
 })
 export class FilenavComponent {
-  groupnames: string[] = ["groupname 1", "groupname 2", "groupname 3", "groupname 4", "groupname 5"];
+  groups: Group[] = [];
+
+  constructor(private provider: FilegroupService) {}
+
+  ngOnInit(): any {
+    this.provider.getAllGroups().subscribe(response => this.groups = response);
+  }
 
 }
