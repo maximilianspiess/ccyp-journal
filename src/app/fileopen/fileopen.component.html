@@ -1,0 +1,26 @@
+<div class="content">
+  <app-title></app-title>
+  <app-generated-question></app-generated-question>
+  <app-textarea></app-textarea>
+  <div *ngFor="let textfield of textfields">
+    <div *ngIf="textfield.textfiledtype==textfieldTypeEnum.Text">
+      <app-textarea></app-textarea>
+    </div>
+    <div *ngIf="textfield.textfiledtype==textfieldTypeEnum.Question">
+      <app-question></app-question>
+    </div>
+    <div *ngIf="textfield.textfiledtype==textfieldTypeEnum.GeneratedQuestion">
+      <app-generated-question></app-generated-question>
+    </div>
+  </div>
+  <div class="dropup">
+    <button class="dropbtn">+</button>
+    <div class="dropup-content">
+      <button (click)="addNewTextfield(textfieldTypeEnum.Text)">Text</button>
+      <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>
+      <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>
+    </div>
+  </div>
+</div>
+
+

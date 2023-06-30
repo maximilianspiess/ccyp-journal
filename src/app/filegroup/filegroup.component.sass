@@ -1,20 +1,48 @@
+$font-size-14: 0.875em
+$font-size-15: 0.9375em
+$font-size-18: 1.125em
+
+$color-delete-add: #343A3F40
+
 .container
-  width: 70%
-  height: auto
-  //padding: 10px
-  //margin: 10px 25px
-  padding: 7.5%
-  margin: 2.5% 7.5%
-  border-radius: 30px
-  background: linear-gradient(225deg, #b7ccdd, #d9f3ff)
-  box-shadow: -20px 20px 60px #adc1d0, 20px -20px 60px #e9ffff
   display: flex
-  justify-content: center
-  align-items: center
+  flex-direction: column
+  box-sizing: border-box
+  height: auto
+  padding: 0.75em 1.5em
+  margin: 0.5em 1.5em
+  border-radius: 20px
+  background: linear-gradient(225deg, #b7ccdd, #d9f3ff)
+  box-shadow: -7px 7px 20px #adc1d0, 7px -7px 20px #e9ffff
   font-size: 1em
+
+.title-delete
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+
+.filegroup-title
+  margin: 0 0 0.25em 0
+  font-size: $font-size-15
 
 .text
   height: auto
-  align-self: center
-  //background-color: blueviolet
   overflow-wrap: break-word
+  margin: 0 0 0.1em 0
+  font-size: $font-size-15
+
+.fileButton
+  width: 1.5*$font-size-18
+  height: auto
+  border: none
+  background-color: inherit
+  margin-left: -0.5*$font-size-18
+  padding: 0
+  text-align: center
+  font-size: $font-size-18
+  color: #343A3F40
+
+.delete
+  transform: rotate(45deg)
+  margin: 0 -0.75*$font-size-18 0 0
