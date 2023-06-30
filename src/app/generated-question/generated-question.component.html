@@ -1,10 +1,10 @@
-<div *ngIf="showComponent"  class="content">
+<div *ngIf="showComponent" class="content">
   <button class="delete" (click)="showComponent = !showComponent">x</button>
   <span
     class="question"
     role="textbox"
     contenteditable>
-    las dir eine Frage generieren?
+     {{question}}
     </span>
-  <img src="assets/reload.png" class="reload">
+  <img src="assets/reload.png" (click)="newQuestion()" class="reload">
 </div>
