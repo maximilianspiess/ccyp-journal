@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {FilegroupService} from "../../filegroup.service";
 import {Observable} from "rxjs";
 import {File} from "../files.model";
+import {Group} from "../group.model";
 
 @Component({
   selector: 'app-filegroup',
@@ -27,6 +28,9 @@ export class FilegroupComponent {
     });
   }
 
+  deleteGroupById(groupId: string): void {
+    this.provider.deleteGroupById(groupId);
+  }
 
 
 }
