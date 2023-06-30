@@ -17,6 +17,7 @@ export class LoginComponent {
 
   onSave(){
     this.router.navigateByUrl("home")
+
   }
   onRegister(){
     this.router.navigateByUrl("register")
