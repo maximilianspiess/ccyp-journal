@@ -1,4 +1,6 @@
 export enum TextfieldTypeEnum {
-  Question,
-  Text
+  GeneratedQuestion,
+  Text,
+  Question
+
 }

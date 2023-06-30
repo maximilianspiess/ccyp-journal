@@ -13,23 +13,39 @@ import { TitleComponent } from './title/title.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { GeneratedQuestionComponent } from './generated-question/generated-question.component';
 import { QuestionComponent } from './question/question.component';
+import { LoginComponent } from './login/login.component';
+import { ApplikationComponent } from './applikation/applikation.component';
+import {RouterModule, Routes} from "@angular/router";
+import { RegisterComponent } from './register/register.component';
+import {FormsModule} from "@angular/forms";
 
+const appRoutes: Routes = [
+  {path: "home", component: ApplikationComponent},
+  {path: "", component: LoginComponent, pathMatch: "full"},
+  {path: "register", component: RegisterComponent},
+  {path: "", component: RegisterComponent, pathMatch: "full"}
+]
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FilenavComponent,
     FilegroupComponent,
+    LoginComponent,
+    ApplikationComponent,
+    RegisterComponent,
     FileopenComponent,
     TitleComponent,
     TextareaComponent,
     GeneratedQuestionComponent,
-    QuestionComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

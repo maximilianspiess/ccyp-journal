@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./question.component.sass']
 })
 export class QuestionComponent {
+  showComponent: boolean = true;
 
 }

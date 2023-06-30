@@ -1,1 +1,9 @@
-<p>question works!</p>
+<div *ngIf="showComponent" class="content">
+  <button class="delete" (click)="showComponent = !showComponent">x</button>
+  <span
+    class="question"
+    role="textbox"
+    contenteditable>
+    Schreibe eine Frage?
+    </span>
+</div>
