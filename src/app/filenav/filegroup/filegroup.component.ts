@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {FilegroupService} from "../filegroup.service";
+import {FilegroupService} from "../../filegroup.service";
 import {Observable} from "rxjs";
-import {File} from "../model/files.model";
+import {File} from "../files.model";
 
 @Component({
   selector: 'app-filegroup',

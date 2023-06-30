@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FilenavComponent } from './filenav/filenav.component';
-import { FilegroupComponent } from './filegroup/filegroup.component';
+import { FilegroupComponent } from './filenav/filegroup/filegroup.component';
 import { FileopenComponent } from './fileopen/fileopen.component';
 import { TitleComponent } from './title/title.component';
 import { TextareaComponent } from './textarea/textarea.component';
@@ -20,10 +20,9 @@ import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
-  {path: "home", component: ApplikationComponent},
-  {path: "", component: LoginComponent, pathMatch: "full"},
-  {path: "register", component: RegisterComponent},
-  {path: "", component: RegisterComponent, pathMatch: "full"}
+  {path: "", component: ApplikationComponent, pathMatch: "full"},
+  {path: "login", component: LoginComponent},
+  {path: "register", component: RegisterComponent}
 ]
 @NgModule({
   declarations: [

@@ -2,4 +2,7 @@
   <div class="filegroup-container" *ngFor="let group of groups">
     <app-filegroup [group]="group"></app-filegroup>
   </div>
+  <div class="filegroup-add-container">
+    <button type="button" (click)="addGroup()" class="filegroup-add-button">+</button>
+  </div>
 </div>
