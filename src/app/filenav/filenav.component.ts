@@ -16,4 +16,8 @@ export class FilenavComponent {
     this.provider.getAllGroups().subscribe(response => this.groups = response);
   }
 
+  addGroup(): void {
+    this.provider.addGroup();
+  }
+
 }
