@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="items">
+    <div class="logo">
+      <h1>REGISTER</h1>
+    </div>
+    <div class="name">
+      <input placeholder="name" type="text" (change)="onChange($event)">
+    </div>
+    <div class="family_name">
+      <input placeholder="family name" type="text" (change)="onChange($event)">
+    </div>
+    <div class="username">
+      <input placeholder="username" type="text" (change)="onChange($event)">
+    </div>
+    <div class="password">
+      <input placeholder="password" type="password" (change)="onChange($event)">
+    </div>
+    <div class="password">
+      <input placeholder="confirm password" type="password" (change)="onChange($event)">
+    </div>
+    <div class="button">
+      <button id="btn" (click)="onSave()">
+        Register
+      </button>
+    </div>
+  </div>
+</div>
