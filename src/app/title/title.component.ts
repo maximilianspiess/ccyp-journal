@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./title.component.sass']
 })
 export class TitleComponent {
-
+  text: string;
+  async onChange(event: any) {
+    console.log(event.target.value)
+    this.text = event.target.value
+  }
 }

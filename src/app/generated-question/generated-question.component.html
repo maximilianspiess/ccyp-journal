@@ -3,8 +3,9 @@
   <span
     class="question"
     role="textbox"
-    contenteditable>
+    contenteditable
+    (input)="onChange($event)">
      {{question}}
     </span>
-  <img src="assets/reload.png" (click)="newQuestion()" class="reload">
+  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">
 </div>

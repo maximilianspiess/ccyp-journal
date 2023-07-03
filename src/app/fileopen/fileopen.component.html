@@ -1,7 +1,5 @@
 <div class="content">
   <app-title></app-title>
-  <app-generated-question></app-generated-question>
-  <app-textarea></app-textarea>
   <div *ngFor="let textfield of textfields">
     <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Text">
       <app-textarea></app-textarea>
@@ -21,6 +19,7 @@
       <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>
     </div>
   </div>
+  <button (click)="saveFile()">Safe</button>
 </div>
 
 

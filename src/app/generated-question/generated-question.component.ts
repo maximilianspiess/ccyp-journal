@@ -28,6 +28,10 @@ export class GeneratedQuestionComponent {
     })
   }
 
+  onChange(event: any) {
+    console.log(event.target.textContent)
+  }
+
   ngOnInit() {
     this.http.get<any>(this.url).subscribe(response => {
       this.data = response;
