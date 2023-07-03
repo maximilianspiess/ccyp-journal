@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 import {File} from "./filenav/files.model";
 import {Group} from "./filenav/group.model";
 
@@ -16,7 +16,8 @@ const DELETE_GROUP_BY_ID = "deleteGroupById/"
 })
 export class FilegroupService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   public getAllFiles(): Observable<File[]> {
     return this.http.get<File[]>(URL + GET_ALL_FILES_ROUTE);
@@ -29,6 +30,7 @@ export class FilegroupService {
   public getFilesInGroup(groupId: string): Observable<File[]> {
     return this.http.get<File[]>(URL + GET_FILES_BY_GROUP_ID_ROUTE + groupId);
   }
+
 
   public addGroup(): Observable<any> {
     //TODO does not work without subscribe!

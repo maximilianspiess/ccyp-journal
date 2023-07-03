@@ -1,9 +1,19 @@
-.titel
+$border-width: 2px
+$border-color: #b2c3d1
+
+.title
   font-size: 2.5rem
+  border: $border-width solid transparent
+  transition: all 0.15s ease-in-out
+  padding: 12px 20px
+  border-radius: 10px
+  overflow-wrap: break-word
+  overflow: clip
 
 span:focus
-  border: 3px solid #84909a
+  border: $border-width solid $border-color
   outline: none
+
 .content
   margin-bottom: 3rem
   margin-top: 2rem

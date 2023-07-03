@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {FileopenComponent} from "../fileopen/fileopen.component";
+import {Component} from '@angular/core';
 
 
 @Component({
