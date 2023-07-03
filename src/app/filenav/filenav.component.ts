@@ -17,9 +17,9 @@ export class FilenavComponent {
   }
 
   addGroup(): void {
-    console.log("BEFORE subscribe in addGroup of filenav.c.ts")
+    // console.log("BEFORE subscribe in addGroup of filenav.c.ts")
     this.provider.addGroup().subscribe(() => this.ngOnInit()); // doesn't get called, don't know why
-    console.log("AFTER subscribe in addGroup of filenav.c.ts")
+    // console.log("AFTER subscribe in addGroup of filenav.c.ts")
   }
 
 }

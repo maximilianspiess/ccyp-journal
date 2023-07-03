@@ -22,15 +22,16 @@ export class FilegroupComponent {
     })
   }
 
-  addFileToGroup(): void {
-    this.provider.getAllFiles().subscribe(response => {
-      response.forEach(file => this.files.push(file));
-    });
+  addFileToGroup(groupId: string): void {
+    this.provider.addFileToGroup(groupId);
+  }
+
+  deleteFileById(fileId: string): void {
+    this.provider.deleteFileById(fileId);
   }
 
   deleteGroupById(groupId: string): void {
     this.provider.deleteGroupById(groupId);
   }
-
 
 }

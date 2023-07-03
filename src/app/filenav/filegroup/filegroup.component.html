@@ -1,10 +1,11 @@
 <div class="container">
   <div class="title-delete">
     <h4 class="filegroup-title">{{ group.group_name }}</h4>
-    <button type="button" (click)="deleteGroupById(group.id)" class="fileButton delete">+</button>
+    <button type="button" (click)="deleteGroupById(group.id)" class="add-base delete-group">+</button>
   </div>
-  <div *ngFor="let file of files">
+  <div *ngFor="let file of files" class="filename-delete">
     <p class="text">{{ file.file_name }}</p>
+    <button type="button" (click)="deleteFileById(file.id)" class="text-invisible delete-file">+</button>
   </div>
-  <button type="button" (click)="addFileToGroup()" class="fileButton">+</button>
+  <button type="button" (click)="addFileToGroup(group.id)" class="add-base">+</button>
 </div>
