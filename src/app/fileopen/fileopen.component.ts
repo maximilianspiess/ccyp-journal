@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
-import {TextareaComponent} from "../textarea/textarea.component";
-import {GeneratedQuestionComponent} from "../generated-question/generated-question.component";
+import {ActivatedRoute} from "@angular/router";
 import {TextfieldModel} from "./textfield.model";
 import {TextfieldTypeEnum} from "./textfield-type.enum";
+import {FilegroupService} from "../filegroup.service";
+import {File} from "../filenav/file.model";
+import {Block} from "../filenav/block.model";
 
 @Component({
   selector: 'app-fileopen',
@@ -10,8 +12,23 @@ import {TextfieldTypeEnum} from "./textfield-type.enum";
   styleUrls: ['./fileopen.component.sass']
 })
 export class FileopenComponent {
-  textfields: TextfieldModel[] = []
-  textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum
+  textfields: TextfieldModel[] = [];
+  textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum;
+  currentFile: File;
+  textBlocks: Block[];
+
+  constructor(private route: ActivatedRoute, private provider: FilegroupService) {}
+
+  ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    const fileIdFromRoute = routeParams.get("fileId");
+
+    this.provider.getFileById(fileIdFromRoute).subscribe(response => {
+      this.currentFile = response;
+      this.textBlocks = response.text_blocks;
+    })
+
+  }
 
   addNewTextfield(textfields: TextfieldTypeEnum) {
     const newtextfield: TextfieldModel = {

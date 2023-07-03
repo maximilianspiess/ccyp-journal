@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FilegroupService} from "../../filegroup.service";
 import {Observable} from "rxjs";
-import {File} from "../files.model";
+import {File} from "../file.model";
 import {Group} from "../group.model";
 
 @Component({
@@ -13,6 +13,7 @@ export class FilegroupComponent {
 
   @Input() group;
   files: File[] = [];
+  currentFile: File;
 
   constructor(private provider: FilegroupService) {}
 
@@ -20,6 +21,13 @@ export class FilegroupComponent {
     this.provider.getFilesInGroup(this.group.id).subscribe(response => {
       response.forEach(file => this.files.push(file))
     })
+  }
+
+  getFileById(fileId: string): void {
+    this.provider.getFileById(fileId).subscribe(response => {
+      this.currentFile = response;
+    });
+    console.log(this.currentFile);
   }
 
   addFileToGroup(groupId: string): void {

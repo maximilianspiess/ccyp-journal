@@ -20,9 +20,10 @@ import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
-  {path: "", component: ApplikationComponent, pathMatch: "full"},
-  {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent}
+  { path: "", component: ApplikationComponent, pathMatch: "full" },
+  { path: "files/:fileId", component: FileopenComponent },
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent }
 ]
 @NgModule({
   declarations: [
