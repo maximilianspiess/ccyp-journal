@@ -1,7 +1,7 @@
 <div class="container">
   <div class="title-delete">
     <h4 class="filegroup-title">{{ group.group_name }}</h4>
-    <button type="button" class="fileButton delete">+</button>
+    <button type="button" (click)="deleteGroupById(group.id)" class="fileButton delete">+</button>
   </div>
   <div *ngFor="let file of files">
     <p class="text">{{ file.file_name }}</p>
