@@ -4,6 +4,7 @@ $font-size-18: 1.125em
 
 $color-delete-add: #343A3F40
 $color-delete-add-hover: #343A3FBF
+$color-delete-file: #343A3F1A // 10% transparency
 
 .container
   display: flex
@@ -17,15 +18,16 @@ $color-delete-add-hover: #343A3FBF
   box-shadow: -7px 7px 20px #adc1d0, 7px -7px 20px #e9ffff
   font-size: 1em
 
-.title-delete
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
 
 .filegroup-title
   margin: 0 0 0.25em 0
   font-size: $font-size-15
+
+.title-delete, .filename-delete
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
 
 .text
   height: auto
@@ -33,7 +35,9 @@ $color-delete-add-hover: #343A3FBF
   margin: 0 0 0.1em 0
   font-size: $font-size-15
 
-.fileButton
+.text:hover
+
+.add-base
   width: 1.5*$font-size-18
   height: auto
   border: none
@@ -46,14 +50,27 @@ $color-delete-add-hover: #343A3FBF
   color: $color-delete-add
   transition: all 0.25s
 
-.fileButton:hover
+.add-base:hover
   color: $color-delete-add-hover
   transform: rotate(90deg)
 
-.delete
+.text-invisible
+  width: 1.5*$font-size-18
+  height: auto
+  border: none
+  outline: none
+  background-color: inherit
+  margin-left: -0.5*$font-size-18
+  padding: 0
+  text-align: center
+  font-size: $font-size-18
+  color: $color-delete-file //transparent
+  transition: all 0.25s
+
+.delete-group, .delete-file
   margin: 0 -0.75*$font-size-18 0 0
   transform: rotate(45deg)
 
-.delete:hover
+.delete-group:hover, .delete-file:hover
   color: $color-delete-add-hover
   transform: rotate(135deg)
