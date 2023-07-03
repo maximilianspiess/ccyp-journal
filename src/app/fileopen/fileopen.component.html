@@ -3,13 +3,13 @@
   <app-generated-question></app-generated-question>
   <app-textarea></app-textarea>
   <div *ngFor="let textfield of textfields">
-    <div *ngIf="textfield.textfiledtype==textfieldTypeEnum.Text">
+    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Text">
       <app-textarea></app-textarea>
     </div>
-    <div *ngIf="textfield.textfiledtype==textfieldTypeEnum.Question">
+    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Question">
       <app-question></app-question>
     </div>
-    <div *ngIf="textfield.textfiledtype==textfieldTypeEnum.GeneratedQuestion">
+    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.GeneratedQuestion">
       <app-generated-question></app-generated-question>
     </div>
   </div>
