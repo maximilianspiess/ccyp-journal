@@ -1,38 +1,56 @@
+$border-width: 2px
+$border-color: #b2c3d1
+
+$color-delete-add: #343A3F40
+$color-delete-add-hover: #343A3FBF
+
 .question
-  width: 70%
+  width: 100%
   height: 50%
   padding: 12px 20px
   resize: none
   font-size: 1.5rem
   font-weight: bold
   margin-bottom: 3%
+  border-radius: 10px
+  overflow-wrap: break-word
+  overflow: clip
+  border: $border-width solid transparent
+  transition: all 0.15s ease-in-out
+
+
 .reload
   align-items: center
   margin-bottom: 1rem
   margin-left: 2%
-  width: 2rem
-  height: 2rem
+  width: 1.6rem
+  height: 1.6rem
   font-size: 1.5rem
   text-decoration: none
   border-radius: 50%
   opacity: 0.2
+  transition: all 0.25s ease-in-out
+
 .reload:hover
   opacity: 1
+
 .content
   display: flex
   flex-direction: row
   width: 70%
   height: 20%
+
 span:focus
-  border: 3px solid #84909a
+  border: $border-width solid $border-color
   outline: none
+
 .delete
-  width: 2rem
-  height: 2rem
   font-size: 1.5rem
-  text-decoration: none
+  transform: rotate(45deg)
+  color: $color-delete-add
   text-align: center
-  border: none
-  opacity: 0.2
+  transition: all 0.15s ease-in-out
+
 .delete:hover
-  opacity: 1
+  cursor: pointer
+  color: $color-delete-add-hover

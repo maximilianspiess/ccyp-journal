@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 import {File} from "./filenav/files.model";
 import {Group} from "./filenav/group.model";
 
@@ -15,7 +15,8 @@ const ADD_GROUP_ROUTE = "saveGroup"
 })
 export class FilegroupService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   public getAllFiles(): Observable<File[]> {
     return this.http.get<File[]>(URL + GET_ALL_FILES_ROUTE);
@@ -30,7 +31,7 @@ export class FilegroupService {
   }
 
   public addGroup(): void {
-    this.http.post(URL + ADD_GROUP_ROUTE, { "group_name": "New Group" });
+    this.http.post(URL + ADD_GROUP_ROUTE, {"group_name": "New Group"});
   }
 
 }
