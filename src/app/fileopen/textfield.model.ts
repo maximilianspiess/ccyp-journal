@@ -1,6 +1,6 @@
 import {TextfieldTypeEnum} from "./textfield-type.enum";
 
 export interface TextfieldModel {
-  textfield: TextfieldTypeEnum,
+  textfieldtype: TextfieldTypeEnum,
   content:string
 }

@@ -15,7 +15,7 @@ export class FileopenComponent {
 
   addNewTextfield(textfields: TextfieldTypeEnum) {
     const newtextfield: TextfieldModel = {
-      textfield: textfields,
+      textfieldtype: textfields,
       content: "dies ist ein Platzhalter"
     }
     this.textfields.push(newtextfield)
