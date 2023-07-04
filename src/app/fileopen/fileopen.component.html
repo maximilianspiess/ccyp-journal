@@ -1,5 +1,8 @@
 <div class="content">
   <app-title></app-title>
+<!--  <app-title></app-title>-->
+<!--  <app-generated-question></app-generated-question>-->
+<!--  <app-textarea></app-textarea>-->
   <div *ngFor="let textfield of textfields">
     <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Text">
       <app-textarea></app-textarea>
@@ -9,6 +12,15 @@
     </div>
     <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.GeneratedQuestion">
       <app-generated-question></app-generated-question>
+    </div>
+  </div>
+
+
+  <div *ngIf="currentFile">
+    <app-title [file]="currentFile"></app-title>
+    <div *ngFor="let textBlock of textBlocks">
+<!--      <div *ngIf="textBlocks"-->
+      <h3>asdfa</h3>
     </div>
   </div>
   <div class="dropup">
@@ -21,5 +33,7 @@
   </div>
   <button class="save" (click)="saveFile()">Save</button>
 </div>
+
+
 
 

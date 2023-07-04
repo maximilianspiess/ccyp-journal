@@ -16,6 +16,7 @@ $color-delete-add-hover: #343A3FBF
   border: $border-width solid transparent
   transition: all 0.15s ease-in-out
   background-color: transparent
+  margin-left: 3%
 
 .content
   display: flex
@@ -23,17 +24,19 @@ $color-delete-add-hover: #343A3FBF
   width: 70%
   height: 100%
 
-input:focus
+span:focus
   border: $border-width solid $border-color
   outline: none
 
-.delete
+.delete-group
   font-size: 1.5rem
   transform: rotate(45deg)
   color: $color-delete-add
   text-align: center
   transition: all 0.15s ease-in-out
+  border: none
+  background-color: transparent
 
-.delete:hover
+.delete-group:hover
   cursor: pointer
   color: $color-delete-add-hover

@@ -30,7 +30,6 @@ export class GeneratedQuestionComponent {
 
   onChange(event: any) {
     console.log(event.target.textContent)
-    //TODO handle the changed input
   }
 
   ngOnInit() {
