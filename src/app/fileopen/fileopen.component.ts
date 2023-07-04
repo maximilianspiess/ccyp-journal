@@ -15,7 +15,7 @@ export class FileopenComponent {
   textfields: TextfieldModel[] = [];
   textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum;
   currentFile: File;
-  textBlocks: Block[];
+  // textBlocks: Block[];
 
   constructor(private route: ActivatedRoute, private provider: FilegroupService) {}
 
@@ -25,7 +25,7 @@ export class FileopenComponent {
 
     this.provider.getFileById(fileIdFromRoute).subscribe(response => {
       this.currentFile = response;
-      this.textBlocks = response.text_blocks;
+      // this.textBlocks = response.text_blocks;
     })
 
   }

@@ -6,6 +6,6 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./title.component.sass']
 })
 export class TitleComponent {
-  @Input() file;
+  @Input() title;
 
 }
