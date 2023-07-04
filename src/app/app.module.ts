@@ -18,6 +18,7 @@ import { ApplikationComponent } from './applikation/applikation.component';
 import {RouterModule, Routes} from "@angular/router";
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
+import {NgOptimizedImage} from "@angular/common";
 
 const appRoutes: Routes = [
   { path: "", component: ApplikationComponent, pathMatch: "full" },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
