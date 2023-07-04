@@ -1,4 +1,3 @@
-import {Component} from '@angular/core';
 import {Output,EventEmitter} from "@angular/core";
 import {Component, Input} from '@angular/core';
 
@@ -14,6 +13,5 @@ export class TitleComponent {
     this.text = event.target.value
     console.log(this.text)
   }
-  @Input() file;
 
 }

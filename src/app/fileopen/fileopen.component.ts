@@ -5,8 +5,6 @@ import {HttpClient} from "@angular/common/http";
 import {TitleComponent} from "../title/title.component";
 import {Output,EventEmitter} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {TextfieldModel} from "./textfield.model";
-import {TextfieldTypeEnum} from "./textfield-type.enum";
 import {FilegroupService} from "../filegroup.service";
 import {File} from "../filenav/file.model";
 import {Block} from "../filenav/block.model";
@@ -18,16 +16,13 @@ import {Block} from "../filenav/block.model";
 })
 export class FileopenComponent {
   question: string;
-  private readonly url = "http://localhost:8080/saveFile"
+  private http: HttpClient;
 
-  constructor(private http: HttpClient) {
-  }
+  private readonly url = "http://localhost:8080/saveFile"
   titel =TitleComponent.prototype.text
   textfields: TextfieldModel[] = []
+
   textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum
-  textfields: TextfieldModel[] = [];
-  textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum;
-  
   currentFile: File;
   // textBlocks: Block[];
 
