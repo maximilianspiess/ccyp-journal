@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Output,EventEmitter} from "@angular/core";
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -12,4 +13,6 @@ export class TitleComponent {
     this.text = event.target.value
     console.log(this.text)
   }
+  @Input() file;
+
 }
