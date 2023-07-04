@@ -12,14 +12,14 @@
     </div>
   </div>
   <div class="dropup">
-    <button class="dropbtn">+</button>
+    <button class="dropbtn">Add Item</button>
     <div class="dropup-content">
       <button (click)="addNewTextfield(textfieldTypeEnum.Text)">Text</button>
       <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>
       <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>
     </div>
   </div>
-  <button (click)="saveFile()">Safe</button>
+  <button class="save" (click)="saveFile()">Save</button>
 </div>
 
 
