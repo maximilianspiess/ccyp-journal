@@ -1,4 +1,9 @@
 import {Component} from '@angular/core';
+import {TextfieldModel} from "./textfield.model";
+import {TextfieldTypeEnum} from "./textfield-type.enum";
+import {HttpClient} from "@angular/common/http";
+import {TitleComponent} from "../title/title.component";
+import {Output,EventEmitter} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {TextfieldModel} from "./textfield.model";
 import {TextfieldTypeEnum} from "./textfield-type.enum";
@@ -12,8 +17,17 @@ import {Block} from "../filenav/block.model";
   styleUrls: ['./fileopen.component.sass']
 })
 export class FileopenComponent {
+  question: string;
+  private readonly url = "http://localhost:8080/saveFile"
+
+  constructor(private http: HttpClient) {
+  }
+  titel =TitleComponent.prototype.text
+  textfields: TextfieldModel[] = []
+  textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum
   textfields: TextfieldModel[] = [];
   textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum;
+  
   currentFile: File;
   textBlocks: Block[];
 
@@ -35,7 +49,19 @@ export class FileopenComponent {
       textfieldtype: textfields,
       content: "dies ist ein Platzhalter"
     }
+    console.log(textfields)
     this.textfields.push(newtextfield)
+  }
+  saveFile() {
+    this.http.post<any>(this.url, {
+      owner_id: '5',
+      file_name:this.titel,
+      creation_date:'02-1-2018',
+      text_blocks: this.textfields
+    }).subscribe(res =>{
+    })
+
+    console.log(this.titel)
   }
 
 

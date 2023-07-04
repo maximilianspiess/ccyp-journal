@@ -1,3 +1,5 @@
+import {Component} from '@angular/core';
+import {Output,EventEmitter} from "@angular/core";
 import {Component, Input} from '@angular/core';
 
 @Component({
@@ -6,6 +8,11 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./title.component.sass']
 })
 export class TitleComponent {
+  text: string;
+  async onChange(event: any) {
+    this.text = event.target.value
+    console.log(this.text)
+  }
   @Input() file;
 
 }
