@@ -1,14 +1,59 @@
 .content
   margin-left: 3%
 
+
+.title-intrafile
+  color: darkslateblue
+
+.textarea
+  resize: none
+  overflow: hidden
+
+
 .dropbtn
   margin-top: 5%
-  width: 2rem
-  height: 2rem
-  font-size: 1.5rem
-  text-align: center
-  text-decoration: none
-  border-radius: 50%
+  font-size: 18px
+  color: #000000
+  font-family: inherit
+  font-weight: 800
+  cursor: pointer
+  position: relative
+  border: none
+  background: none
+  text-transform: uppercase
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1)
+  transition-duration: 400ms
+  transition-property: color
+
+.dropbtn:focus,
+.dropbtn:hover
+  color: #626161
+
+
+.dropbtn:focus:after,
+.dropbtn:hover:after,
+.dropup-content:focus:after,
+.dropup-content:hover:after
+  width: 100%
+  left: 0%
+
+
+.dropbtn:after,
+.dropup-content:after,
+.save:after
+  content: ""
+  pointer-events: none
+  bottom: -2px
+  left: 50%
+  position: absolute
+  width: 0%
+  height: 2px
+  background-color: #626161
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1)
+  transition-duration: 400ms
+  transition-property: width, left
+
+
 
 .dropup
   margin-top: 5%
@@ -35,20 +80,43 @@
   background-color: #E5F1FAFF
   color: black
   flex-grow: 1
-  font-size: 1rem
-  border: 1px solid black
+  font-family: inherit
+  font-weight: 750
+  font-size: 16px
+  border: none
 
+.dropup-content button:hover
+  color: #626161
 .dropup:hover .dropup-content
   display: flex
   flex-direction: row
 
 
-.title-intrafile
-  color: darkslateblue
+.save
+  margin-left: 90%
+  font-size: 18px
+  color: #000000
+  font-family: inherit
+  font-weight: 800
+  cursor: pointer
+  position: relative
+  border: none
+  background: none
+  text-transform: uppercase
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1)
+  transition-duration: 400ms
+  transition-property: color
 
-.textarea
-  resize: none
-  overflow: hidden
+.save:focus,
+.save:hover
+  color: #626161
+
+
+.save:focus:after,
+.save:hover:after
+  width: 100%
+  left: 0%
+
 
 
 

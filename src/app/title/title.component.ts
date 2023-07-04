@@ -9,9 +9,11 @@ import {Component, Input} from '@angular/core';
 export class TitleComponent {
   @Input() title;
   text: string;
+
   async onChange(event: any) {
-    this.text = event.target.value
-    console.log(this.text)
+    this.text = event.target.value;
+    console.log(this.text);
+
   }
 
 }

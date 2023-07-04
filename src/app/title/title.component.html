@@ -1,4 +1,4 @@
 <div class="content">
-  <span role="textbox" contenteditable class="title">{{ title }}</span>
-<input class="title" role="textbox" (change)="onChange($event)" contenteditable value="Lernjorunal">
+  <span role="textbox" (input)="onChange($event)" contenteditable class="title">{{ title }}</span>
+<!--<input class="title" role="textbox" (change)="onChange($event)" contenteditable value="Lernjorunal">-->
 </div>
