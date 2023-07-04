@@ -3,6 +3,7 @@ import {TextfieldModel} from "./textfield.model";
 import {TextfieldTypeEnum} from "./textfield-type.enum";
 import {HttpClient} from "@angular/common/http";
 import {TitleComponent} from "../title/title.component";
+import {Output,EventEmitter} from "@angular/core";
 
 @Component({
   selector: 'app-fileopen',
@@ -38,4 +39,6 @@ export class FileopenComponent {
 
     console.log(this.titel)
   }
+
+
 }
