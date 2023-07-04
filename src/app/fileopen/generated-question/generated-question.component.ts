@@ -1,4 +1,4 @@
-import {Component, Injectable} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -7,35 +7,40 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./generated-question.component.sass']
 })
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
 
 export class GeneratedQuestionComponent {
-  showComponent: boolean = true;
+  @Input() genQuestion: string;
+  @Output() genQuestionChange = new EventEmitter<string>();
 
-  data = null;
-  question = null;
-  private url: string = "http://localhost:8080/getRandomQuestion"
-
-  constructor(private http: HttpClient) {
+  async onChange(event: any) {
+    this.genQuestionChange.emit(event.target.innerText);
+    // console.log("gen-question.cp.ts, onChange: " + this.genQuestion);
   }
 
-  newQuestion(){
-    this.http.get<any>(this.url).subscribe(response => {
-      this.data = response;
-      this.question = this.data.question_text;
-    })
-  }
+  // http: HttpClient;
+  // showComponent: boolean = true;
+  //
+  // data = null;
+  // question = null;
 
-  onChange(event: any) {
-    console.log(event.target.textContent)
-  }
 
-  ngOnInit() {
-    this.http.get<any>(this.url).subscribe(response => {
-      this.data = response;
-      this.question = this.data.question_text;
-    })
-  }
+  // private url: string = "http://localhost:8080/getRandomQuestion"
+  // ngOnInit() {
+  //   this.http.get<any>(this.url).subscribe(response => {
+  //     this.data = response;
+  //     this.question = this.data.question_text;
+  //   })
+
+  // }
+
+  // newQuestion(){
+  //   this.http.get<any>(this.url).subscribe(response => {
+  //     this.data = response;
+  //     this.question = this.data.question_text;
+  //   })
+  // }
+
 }

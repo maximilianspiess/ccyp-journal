@@ -1,11 +1,8 @@
-<div *ngIf="showComponent" class="content">
-  <button class="delete" (click)="showComponent = !showComponent">+</button>
-  <span
-    class="question"
-    role="textbox"
-    contenteditable
-    (input)="onChange($event)">
-     {{question}}
-    </span>
-  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">
+<!--<div *ngIf="showComponent" class="content">-->
+<!--  <button class="delete" (click)="showComponent = !showComponent">+</button>-->
+<div>
+  <span role="textbox" [(ngModel)]="genQuestion" (input)="onChange($event)" contenteditable class="question">
+    {{ genQuestion }}
+  </span>
+<!--  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">-->
 </div>

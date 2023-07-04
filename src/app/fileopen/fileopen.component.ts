@@ -22,7 +22,7 @@ export class FileopenComponent {
   // textfields: TextfieldModel[] = [];
   //
   // textfieldTypeEnum: typeof BlockType = BlockType;
-  currentFile: File;
+  textBlocks: File;
   updatedTitle: string;
   updatedGenQuestion: string;
 
@@ -33,7 +33,7 @@ export class FileopenComponent {
     const fileIdFromRoute = routeParams.get("fileId");
 
     this.provider.getFileById(fileIdFromRoute).subscribe(response => {
-      this.currentFile = response;
+      this.textBlocks = response;
     })
 
   }

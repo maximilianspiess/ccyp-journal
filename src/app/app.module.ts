@@ -15,10 +15,10 @@ import { GeneratedQuestionComponent } from './fileopen/generated-question/genera
 import { QuestionComponent } from './fileopen/question/question.component';
 import { LoginComponent } from './login/login.component';
 import { ApplikationComponent } from './applikation/applikation.component';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { RegisterComponent } from './register/register.component';
-import {FormsModule} from "@angular/forms";
-import {NgOptimizedImage} from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { NgOptimizedImage } from "@angular/common";
 
 const appRoutes: Routes = [
   { path: "", component: ApplikationComponent, pathMatch: "full" },
