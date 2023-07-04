@@ -1,6 +1,6 @@
-import {TextfieldTypeEnum} from "./textfield-type.enum";
+import {BlockType} from "./block-type.enum";
 
 export interface TextfieldModel {
-  textfieldtype: TextfieldTypeEnum,
+  textfieldtype: BlockType,
   content:string
 }
