@@ -1,10 +1,11 @@
 <div *ngIf="showComponent" class="content">
-  <button class="delete" (click)="showComponent = !showComponent">+</button>
+  <button class="delete-group" (click)="showComponent = !showComponent">+</button>
   <span
     class="question"
     role="textbox"
     contenteditable
     (input)="onChange($event)">
+
     </span>
 
 </div>
