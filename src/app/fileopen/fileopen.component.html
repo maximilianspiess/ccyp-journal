@@ -1,39 +1,35 @@
 <div class="content">
-<!--  <app-title></app-title>-->
-<!--  <app-title></app-title>-->
-<!--  <app-generated-question></app-generated-question>-->
-<!--  <app-textarea></app-textarea>-->
-<!--  <div *ngFor="let textfield of textfields">-->
-<!--    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Text">-->
-<!--      <app-textarea></app-textarea>-->
-<!--    </div>-->
-<!--    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Question">-->
-<!--      <app-question></app-question>-->
-<!--    </div>-->
-<!--    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.GeneratedQuestion">-->
-<!--      <app-generated-question></app-generated-question>-->
-<!--    </div>-->
-<!--  </div>-->
-
-
-  <div *ngIf="currentFile">
-    <app-title [title]="currentFile.file_name"></app-title>
-    <div *ngFor="let textBlock of currentFile.text_blocks">
-      <div *ngIf="textBlock.block_type=='title'">
-        <app-title [title]="textBlock.block_content" class="title-intrafile"></app-title>
-      </div>
-      <div *ngIf="textBlock.block_type=='generated_question'">
-        <app-generated-question></app-generated-question>
-      </div>
-      <div *ngIf="textBlock.block_type=='question'">
-        <app-question></app-question>
-      </div>
-      <div *ngIf="textBlock.block_type=='text_area'">
-        <app-textarea></app-textarea>
-      </div>
-      <h4>the number of these elements should be equal with the number of textblocks above</h4>
+  <app-title (textEmitter)="addtitel($event)"></app-title>
+  <div *ngFor="let textfield of textfields">
+    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Text">
+      <app-textarea></app-textarea>
+    </div>
+    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Question">
+      <app-question></app-question>
+    </div>
+    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.GeneratedQuestion">
+      <app-generated-question></app-generated-question>
     </div>
   </div>
+
+<!--  <div *ngIf="currentFile">-->
+<!--    <app-title [title]="currentFile.file_name"></app-title>-->
+<!--    <div *ngFor="let textBlock of currentFile.text_blocks">-->
+<!--      <div *ngIf="textBlock.block_type=='title'">-->
+<!--        <app-title [title]="textBlock.block_content" class="title-intrafile"></app-title>-->
+<!--      </div>-->
+<!--      <div *ngIf="textBlock.block_type=='generated_question'">-->
+<!--        <app-generated-question></app-generated-question>-->
+<!--      </div>-->
+<!--      <div *ngIf="textBlock.block_type=='question'">-->
+<!--        <app-question></app-question>-->
+<!--      </div>-->
+<!--      <div *ngIf="textBlock.block_type=='text_area'">-->
+<!--        <app-textarea></app-textarea>-->
+<!--      </div>-->
+<!--      <h4>the number of these elements should be equal with the number of textblocks above</h4>-->
+<!--    </div>-->
+<!--  </div>-->
   <div class="dropup">
     <button class="dropbtn">Add File</button>
     <div class="dropup-content">

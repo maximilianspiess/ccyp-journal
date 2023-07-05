@@ -9,7 +9,6 @@ import {Component} from '@angular/core';
 export class TextareaComponent {
   showComponent: boolean = true;
   onChange(event: any) {
-    console.log(event.target.textContent)
   }
 }
 

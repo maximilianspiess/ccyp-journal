@@ -1,5 +1,4 @@
-import {Output,EventEmitter} from "@angular/core";
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -8,12 +7,11 @@ import {Component, Input} from '@angular/core';
 })
 export class TitleComponent {
   @Input() title;
-  text: string;
-
+  @Output() textEmitter= new EventEmitter<string>();
+  text: string
   async onChange(event: any) {
-    this.text = event.target.value;
-    console.log(this.text);
-
+    this.text = event.target.innerText;
+    this.textEmitter.emit(this.text)
   }
 
 }

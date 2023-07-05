@@ -3,6 +3,9 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {File} from "./filenav/file.model";
 import {Group} from "./filenav/group.model";
+import {TextfieldModel} from "./fileopen/textfield.model";
+import {TextfieldTypeEnum} from "./fileopen/textfield-type.enum";
+
 
 const URL = "http://localhost:8080/"
 const GET_ALL_FILES_ROUTE = "getAllFiles"
@@ -40,7 +43,7 @@ export class FilegroupService {
 
   public addGroup(): Observable<any> {
     //TODO trying to reload automatically after change
-    return this.http.post(URL + ADD_GROUP_ROUTE, { "group_name": "New Group" });
+    return this.http.post(URL + ADD_GROUP_ROUTE, {"group_name": "New Group"});
   }
 
   public deleteGroupById(groupId: string) {
@@ -60,4 +63,28 @@ export class FilegroupService {
     this.http.delete(URL + DELETE_FILE_BY_ID_ROUTE + fileId).subscribe();
   }
 
+
+
+  saveFile(titel: string, textfields: TextfieldModel[]) {
+    console.log(textfields)
+    this.http.post<any>(URL + ADD_FILE_ROUTE, {
+      id:"1",
+      owner_id: '5',
+      group_id:"1",
+      file_name: titel,
+      creation_date: '02-1-2018',
+      text_blocks: textfields
+      // text_blocks:[{
+      //   block_id: "1",
+      //   block_type: textfields[0].textfieldtype,
+      //   block_content: textfields[0].content
+      // },{
+      //   block_id: "2",
+      //   block_type: textfields[1].textfieldtype,
+      //   block_content: textfields[1].content
+      // }]
+    }).subscribe(res => {
+
+    })
+  }
 }
