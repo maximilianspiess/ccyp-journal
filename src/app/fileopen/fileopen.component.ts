@@ -71,7 +71,7 @@ export class FileopenComponent {
 
 
   saveFile() {
-    this.provider.saveFile(this.titel, this.textfields,this.cValue)
+    this.provider.saveFile(this.titel, this.textfields, this.cValue)
     console.log(this.cValue)
   }
 

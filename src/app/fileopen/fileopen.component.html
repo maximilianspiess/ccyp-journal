@@ -37,19 +37,17 @@
                       (textAreaChange)="onTextAreaChange($event)"></app-textarea>
       </div>
     </div>
-    <!--  <div class="dropup">-->
-    <!--    <button class="dropbtn">Add File</button>-->
-    <!--    <div class="dropup-content">-->
-    <!--      <button (click)="addNewTextfield(textfieldTypeEnum.TextArea)">Text</button>-->
-    <!--      <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>-->
-    <!--      <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>-->
-    <!--    </div>-->
-    <!--  </div>-->
+
+      <div class="dropup">
+        <p class="dropbtn">+</p>
+        <div class="dropup-content">
+          <button (click)="addNewTextfield(textfieldTypeEnum.TextArea)">Text</button>
+          <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>
+          <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>
+        </div>
+      </div>
+
     <button (click)="saveFile()" class="save">Save</button>
-    <h2>{{ updatedTitle }}</h2>
-    <h2>{{ updatedGenQuestion }}</h2>
-    <h2>{{ updatedQuestion }}</h2>
-    <h2>{{ updatedTextArea }}</h2>
   </div>
 
 

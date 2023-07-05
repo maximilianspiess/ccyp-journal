@@ -52,20 +52,18 @@ export class FilegroupService {
     return this.http.get<File>(URL + GET_FILE_BY_ID_ROUTE + fileId);
   }
 
-  public addGroup(): Observable<any> {
-    //TODO trying to reload automatically after change
-    return this.http.post(URL + ADD_GROUP_ROUTE, {"group_name": "New Group"});
+  public addGroup(): void {
+    this.http.post(URL + ADD_GROUP_ROUTE, {"group_name": "New Group"}).subscribe();
   }
 
   public deleteGroupById(groupId: string) {
-    //TODO does not work without subscribe!
     this.http.delete(URL + DELETE_GROUP_BY_ID_ROUTE + groupId).subscribe();
   }
 
   public addFileToGroup(groupId: string): void {
     this.http.post(URL + ADD_FILE_ROUTE, {
       "file_name": "New File",
-      "creation_date": "14-05-2039 06:07:59",
+      "creation_date": Date.now().toString(),
       "group_id": groupId
     }).subscribe();
   }

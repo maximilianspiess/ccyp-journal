@@ -30,14 +30,17 @@ export class FilegroupComponent {
 
   addFileToGroup(groupId: string): void {
     this.provider.addFileToGroup(groupId);
+    window.location.reload();
   }
 
   deleteFileById(fileId: string): void {
     this.provider.deleteFileById(fileId);
+    window.location.reload();
   }
 
   deleteGroupById(groupId: string): void {
     this.provider.deleteGroupById(groupId);
+    window.location.reload();
   }
 
 }
