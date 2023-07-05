@@ -9,16 +9,16 @@ import { HeaderComponent } from './header/header.component';
 import { FilenavComponent } from './filenav/filenav.component';
 import { FilegroupComponent } from './filenav/filegroup/filegroup.component';
 import { FileopenComponent } from './fileopen/fileopen.component';
-import { TitleComponent } from './title/title.component';
-import { TextareaComponent } from './textarea/textarea.component';
-import { GeneratedQuestionComponent } from './generated-question/generated-question.component';
-import { QuestionComponent } from './question/question.component';
+import { TitleComponent } from './fileopen/title/title.component';
+import { TextareaComponent } from './fileopen/textarea/textarea.component';
+import { GeneratedQuestionComponent } from './fileopen/generated-question/generated-question.component';
+import { QuestionComponent } from './fileopen/question/question.component';
 import { LoginComponent } from './login/login.component';
 import { ApplikationComponent } from './applikation/applikation.component';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { RegisterComponent } from './register/register.component';
-import {FormsModule} from "@angular/forms";
-import {NgOptimizedImage} from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { NgOptimizedImage } from "@angular/common";
 
 const appRoutes: Routes = [
   { path: "", component: ApplikationComponent, pathMatch: "full" },

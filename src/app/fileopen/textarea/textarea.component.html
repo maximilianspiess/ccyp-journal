@@ -1,12 +1,9 @@
 <div *ngIf="showComponent" class="content">
   <p class="delete-group" (click)="showComponent = !showComponent">+</p>
-  <span
+  <input [(ngModel)]="textArea"
     class="text"
     role="textbox"
-    (input)="onChange($event)"
-    contenteditable>
-
-    </span>
+    (input)="onChange($event)">
 </div>
 
 

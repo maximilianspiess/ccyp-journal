@@ -1,5 +1,5 @@
 <div *ngIf="showComponent" class="content">
-  <p class="delete-group" (click)="showComponent = !showComponent">+</p>
+  <button class="delete" (click)="showComponent = !showComponent">+</button>
   <input [(ngModel)]="question"
          class="question"
          role="textbox"

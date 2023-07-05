@@ -1,12 +1,8 @@
 <div *ngIf="showComponent" class="content">
-
   <p class="delete-group" (click)="showComponent = !showComponent">+</p>
-  <span
-    class="question"
-    role="textbox"
-    contenteditable
-    (input)="onChange($event)">
-     {{question}}
-    </span>
-  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">
+  <input [(ngModel)]="genQuestion"
+         class="question"
+         role="textbox"
+         (input)="onChange($event)">
+  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" alt="Reload Button">
 </div>

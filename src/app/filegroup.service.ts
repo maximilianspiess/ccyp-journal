@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {generate, Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {File} from "./filenav/file.model";
 import {Group} from "./filenav/group.model";
 import {TextBlockModel} from "./fileopen/textBlockModel";
-
 
 
 const URL = "http://localhost:8080/"
@@ -21,6 +20,18 @@ const DELETE_FILE_BY_ID_ROUTE = "deleteFileById/"
   providedIn: 'root'
 })
 export class FilegroupService {
+
+  private currentFileId: string;
+  private currentFileSubject: Subject<string> = new Subject<string>();
+
+  getCurrentFileSubject(): Observable<string> {
+    return this.currentFileSubject.asObservable();
+  }
+
+  setCurrentFile(id: string): void {
+    this.currentFileId = id;
+    this.currentFileSubject.next(id);
+  }
 
   constructor(private http: HttpClient) {
   }

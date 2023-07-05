@@ -1,11 +1,9 @@
 import {Component} from '@angular/core';
 import {TextBlockModel} from "./textBlockModel";
 import {TextfieldTypeEnum} from "./textfield-type.enum";
-import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {FilegroupService} from "../filegroup.service";
 import {File} from "../filenav/file.model";
-import {generate} from "rxjs";
 import {formatDate} from "@angular/common";
 
 @Component({
@@ -16,30 +14,49 @@ import {formatDate} from "@angular/common";
 export class FileopenComponent {
   question: string;
   currentDate = new Date();
-   cValue = formatDate(this.currentDate, 'HH:mm-dd.MM.yyyy', 'en-US');
+  cValue = formatDate(this.currentDate, 'HH:mm-dd.MM.yyyy', 'en-US');
   private readonly url = "http://localhost:8080/saveFile";
   textfields: TextBlockModel[] = []
 
   textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum
   currentFile: File;
-  titel: string;
-  test:string;
+  // textBlocks: TextBlock[];
 
-  // textBlocks: Block[];
+  updatedTitle: string;
+  updatedGenQuestion: string;
+  updatedQuestion: string;
+  updatedTextArea: string;
+
+  titel: string;
 
   constructor(private route: ActivatedRoute, private provider: FilegroupService) {
   }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const fileIdFromRoute = routeParams.get("fileId");
+    this.provider.getCurrentFileSubject().subscribe(id => {
+      console.log(id);
+      this.provider.getFileById(id).subscribe(file => this.currentFile = file);
+    });
+  }
 
+  onTitleChange(title: string) {
+    this.updatedTitle = title;
+    console.log("onTitleChange: " + this.updatedTitle);
+  }
 
-    this.provider.getFileById(fileIdFromRoute).subscribe(response => {
-      this.currentFile = response;
-      // this.textBlocks = response.text_blocks;
-    })
+  onGenQuestionChange(genQuestion: string) {
+    this.updatedGenQuestion = genQuestion;
+    console.log("onGenQuestionChange: " + this.updatedGenQuestion);
+  }
 
+  onQuestionChange(question: string) {
+    this.updatedQuestion = question;
+    console.log("onQuestionChange: " + this.updatedQuestion);
+  }
+
+  onTextAreaChange(textArea: string) {
+    this.updatedTextArea = textArea;
+    console.log("onTextAreaChange: " + this.updatedTextArea);
   }
 
   addNewTextfield(textfields: TextfieldTypeEnum) {
@@ -52,14 +69,10 @@ export class FileopenComponent {
     this.textfields.push(newtextfield)
   }
 
+
   saveFile() {
     this.provider.saveFile(this.titel, this.textfields,this.cValue)
     console.log(this.cValue)
   }
-
-  addtitel($event: string) {
-    this.titel = $event;
-  }
-
 
 }

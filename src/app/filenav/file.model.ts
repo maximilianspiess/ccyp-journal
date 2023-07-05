@@ -1,10 +1,14 @@
-import {Block} from "./block.model";
+import {TextBlock} from "./block.model";
 
 export class File {
-  constructor(
-    public id: string,
-    public ownerId: number,
-    public name: string,
-    public creationDate: string,
-    public text_blocks: Array<Block>) {}
+
+  id: string;
+  ownerId: number;
+  name: string;
+  creationDate: string;
+  text_blocks: TextBlock[];
+
+  constructor(raw?: Partial<File>) {
+    Object.assign<File, Partial<File>>(this, raw);
+  }
 }
