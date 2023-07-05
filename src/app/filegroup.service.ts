@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {File} from "./filenav/file.model";
 import {Group} from "./filenav/group.model";
 import {TextfieldModel} from "./fileopen/textfield.model";
-import {TextfieldTypeEnum} from "./fileopen/textfield-type.enum";
+
 
 
 const URL = "http://localhost:8080/"
