@@ -18,33 +18,37 @@
 
   <div *ngIf="textBlocks">
     <!--    <app-title [title]="currentFile.file_name"></app-title>-->
-    <div *ngFor="let textBlock of textBlocks.text_blocks; let i = index;">
-      {{textBlocks.text_blocks.length}}
-      <h4>{{ textBlock.block_type }} {{ textBlock.block_content }}</h4>
-      <!--      </div>-->
-            <div *ngIf="textBlock.block_type=='title'">
-              <app-title [title]="textBlocks.text_blocks[i].block_content" (titleChange)="onTitleChange($event)" class="title-intrafile"></app-title>
-            </div>
-<!--      <div *ngIf="textBlock.block_type=='generated_question'">-->
-<!--        <app-generated-question [genQuestion]="currentFile.text_blocks[i+1].block_content" (genQuestionChange)="onGenQuestionChange($event)"></app-generated-question>-->
+    <div *ngFor="let textBlock of textBlocks;let i = index;">
+      {{textBlocks.length}}
+<!--      {{textBlocks[0].block_content}}-->
+<!--      {{textBlocks[1].block_content}}-->
+<!--      {{textBlocks[2].block_content}}-->
+<!--      {{textBlocks[3].block_content}}-->
+<!--      <h4>{{ textBlock.block_type }} {{ textBlock.block_content }}</h4>-->
+<!--      <div *ngIf="textBlock.block_type=='title'">-->
+<!--        <app-title [title]="textBlocks[i].block_content" (titleChange)="onTitleChange($event)" class="title-intrafile"></app-title>-->
 <!--      </div>-->
-      <!--      <div *ngIf="textBlock.block_type=='question'">-->
-      <!--        <app-question></app-question>-->
-      <!--      </div>-->
-      <!--      <div *ngIf="textBlock.block_type=='text_area'">-->
-      <!--        <app-textarea></app-textarea>-->
+      <div *ngIf="textBlock.block_type=='generated_question'">
+        <app-generated-question [genQuestion]="textBlocks[i].block_content" (genQuestionChange)="onGenQuestionChange($event)"></app-generated-question>
+        <h4>{{textBlocks[i].block_content}}</h4>
+      </div>
+<!--      <div *ngIf="textBlock.block_type=='question'">-->
+<!--        <app-question></app-question>-->
+<!--      </div>-->
+<!--      <div *ngIf="textBlock.block_type=='text_area'">-->
+<!--        <app-textarea></app-textarea>-->
+<!--      </div>-->
     </div>
+    <!--  <div class="dropup">-->
+    <!--    <button class="dropbtn">Add File</button>-->
+    <!--    <div class="dropup-content">-->
+    <!--      <button (click)="addNewTextfield(textfieldTypeEnum.TextArea)">Text</button>-->
+    <!--      <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>-->
+    <!--      <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <button (click)="saveFile()" class="save">{{ updatedTitle }}</button>
   </div>
-  <!--  <div class="dropup">-->
-  <!--    <button class="dropbtn">Add File</button>-->
-  <!--    <div class="dropup-content">-->
-  <!--      <button (click)="addNewTextfield(textfieldTypeEnum.TextArea)">Text</button>-->
-  <!--      <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>-->
-  <!--      <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <button (click)="saveFile()" class="save">{{ updatedGenQuestion }}</button>
-</div>
 
 
 

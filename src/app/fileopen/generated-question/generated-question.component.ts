@@ -7,10 +7,6 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./generated-question.component.sass']
 })
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-
 export class GeneratedQuestionComponent {
   @Input() genQuestion: string;
   @Output() genQuestionChange = new EventEmitter<string>();
@@ -20,22 +16,25 @@ export class GeneratedQuestionComponent {
     // console.log("gen-question.cp.ts, onChange: " + this.genQuestion);
   }
 
+  ngOnInit(): void {
+    console.log(this.genQuestion);
+  }
+
+
   // http: HttpClient;
   // showComponent: boolean = true;
   //
   // data = null;
   // question = null;
-
-
+  //
   // private url: string = "http://localhost:8080/getRandomQuestion"
   // ngOnInit() {
   //   this.http.get<any>(this.url).subscribe(response => {
   //     this.data = response;
   //     this.question = this.data.question_text;
   //   })
-
   // }
-
+  //
   // newQuestion(){
   //   this.http.get<any>(this.url).subscribe(response => {
   //     this.data = response;

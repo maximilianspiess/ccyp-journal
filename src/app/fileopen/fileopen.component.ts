@@ -22,7 +22,8 @@ export class FileopenComponent {
   // textfields: TextfieldModel[] = [];
   //
   // textfieldTypeEnum: typeof BlockType = BlockType;
-  textBlocks: File;
+  currentFile: File;
+  textBlocks: Block[];
   updatedTitle: string;
   updatedGenQuestion: string;
 
@@ -32,10 +33,13 @@ export class FileopenComponent {
     const routeParams = this.route.snapshot.paramMap;
     const fileIdFromRoute = routeParams.get("fileId");
 
+    console.log("id " + fileIdFromRoute);
     this.provider.getFileById(fileIdFromRoute).subscribe(response => {
-      this.textBlocks = response;
+      this.currentFile = response;
+      this.textBlocks = response.text_blocks;
     })
 
+    //console.log(this.textBlocks);
   }
 
   onTitleChange(title: string) {
