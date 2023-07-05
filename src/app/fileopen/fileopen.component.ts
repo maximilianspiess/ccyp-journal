@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
-import {TextfieldModel} from "./textfield.model";
+import {TextBlockModel} from "./textBlockModel";
 import {TextfieldTypeEnum} from "./textfield-type.enum";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {FilegroupService} from "../filegroup.service";
 import {File} from "../filenav/file.model";
+import {generate} from "rxjs";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-fileopen',
@@ -13,13 +15,15 @@ import {File} from "../filenav/file.model";
 })
 export class FileopenComponent {
   question: string;
-
+  currentDate = new Date();
+   cValue = formatDate(this.currentDate, 'HH:mm-dd.MM.yyyy', 'en-US');
   private readonly url = "http://localhost:8080/saveFile";
-  textfields: TextfieldModel[] = []
+  textfields: TextBlockModel[] = []
 
   textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum
   currentFile: File;
   titel: string;
+  test:string;
 
   // textBlocks: Block[];
 
@@ -39,18 +43,23 @@ export class FileopenComponent {
   }
 
   addNewTextfield(textfields: TextfieldTypeEnum) {
-    const newtextfield: TextfieldModel = {
-      textfieldtype: textfields,
-      content: "dies ist ein Platzhalter"
+
+    const newtextfield: TextBlockModel = {
+      block_id: Math.random().toString(),
+      block_type: textfields,
+      block_content: "text"
     }
     this.textfields.push(newtextfield)
   }
 
   saveFile() {
-      this.provider.saveFile(this.titel, this.textfields)
+    this.provider.saveFile(this.titel, this.textfields,this.cValue)
+    console.log(this.cValue)
   }
 
   addtitel($event: string) {
     this.titel = $event;
   }
+
+
 }

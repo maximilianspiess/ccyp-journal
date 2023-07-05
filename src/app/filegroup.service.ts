@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {generate, Observable} from "rxjs";
 import {File} from "./filenav/file.model";
 import {Group} from "./filenav/group.model";
-import {TextfieldModel} from "./fileopen/textfield.model";
+import {TextBlockModel} from "./fileopen/textBlockModel";
 
 
 
@@ -64,25 +64,15 @@ export class FilegroupService {
   }
 
 
-
-  saveFile(titel: string, textfields: TextfieldModel[]) {
+  saveFile(titel: string, textfields: TextBlockModel[], cValue: string) {
     console.log(textfields)
     this.http.post<any>(URL + ADD_FILE_ROUTE, {
       id:"1",
       owner_id: '5',
       group_id:"1",
       file_name: titel,
-      creation_date: '02-1-2018',
+      creation_date:cValue,
       text_blocks: textfields
-      // text_blocks:[{
-      //   block_id: "1",
-      //   block_type: textfields[0].textfieldtype,
-      //   block_content: textfields[0].content
-      // },{
-      //   block_id: "2",
-      //   block_type: textfields[1].textfieldtype,
-      //   block_content: textfields[1].content
-      // }]
     }).subscribe(res => {
 
     })

@@ -1,13 +1,13 @@
 <div class="content">
   <app-title (textEmitter)="addtitel($event)"></app-title>
   <div *ngFor="let textfield of textfields">
-    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Text">
+    <div *ngIf="textfield.block_type==textfieldTypeEnum.Text">
       <app-textarea></app-textarea>
     </div>
-    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.Question">
+    <div *ngIf="textfield.block_type==textfieldTypeEnum.Question">
       <app-question></app-question>
     </div>
-    <div *ngIf="textfield.textfieldtype==textfieldTypeEnum.GeneratedQuestion">
+    <div *ngIf="textfield.block_type==textfieldTypeEnum.GeneratedQuestion">
       <app-generated-question></app-generated-question>
     </div>
   </div>
