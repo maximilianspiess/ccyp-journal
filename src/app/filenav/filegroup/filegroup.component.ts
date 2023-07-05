@@ -23,11 +23,9 @@ export class FilegroupComponent {
     })
   }
 
-  getFileById(fileId: string): void {
-    this.provider.getFileById(fileId).subscribe(response => {
-      this.currentFile = response;
-    });
-    console.log(this.currentFile);
+  loadFile(fileId: string): void {
+      this.provider.setCurrentFile(fileId);
+    // console.log(this.currentFile.id);
   }
 
   addFileToGroup(groupId: string): void {

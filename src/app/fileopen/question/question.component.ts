@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-question',
@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./question.component.sass']
 })
 export class QuestionComponent {
-  showComponent: boolean = true;
-  onChange(event: any) {
 
+  @Input() question: string;
+
+  showComponent: boolean = true;
+
+  onChange(event: any) {
   }
 
 }

@@ -33,16 +33,10 @@ export class FileopenComponent {
   constructor(private route: ActivatedRoute, private provider: FilegroupService) {}
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const fileIdFromRoute = routeParams.get("fileId");
-
-    console.log("id " + fileIdFromRoute);
-    this.provider.getFileById(fileIdFromRoute).subscribe(response => {
-      this.currentFile = response;
-      // this.textBlocks = response.text_blocks;
-    })
-
-    //console.log(this.textBlocks);
+    this.provider.getCurrentFileSubject().subscribe(id => {
+      console.log(id);
+      this.provider.getFileById(id).subscribe(file => this.currentFile = file);
+    });
   }
 
   onTitleChange(title: string) {
