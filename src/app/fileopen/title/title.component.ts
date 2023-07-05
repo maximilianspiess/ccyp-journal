@@ -9,7 +9,7 @@ export class TitleComponent {
   @Input() title: string;
   @Output() titleChange = new EventEmitter<string>();
 
-  async onChange(event: any) {
+  onChange(event: any) {
     this.titleChange.emit(event.target.innerText);
     // console.log("title.cp.ts, onChange: " + this.title);
   }

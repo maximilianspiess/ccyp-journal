@@ -6,7 +6,7 @@ import {TitleComponent} from "./title/title.component";
 import {ActivatedRoute} from "@angular/router";
 import {FilegroupService} from "../filegroup.service";
 import {File} from "../filenav/file.model";
-import {Block} from "../filenav/block.model";
+import {TextBlock} from "../filenav/block.model";
 
 @Component({
   selector: 'app-fileopen',
@@ -23,9 +23,12 @@ export class FileopenComponent {
   //
   // textfieldTypeEnum: typeof BlockType = BlockType;
   currentFile: File;
-  textBlocks: Block[];
+  // textBlocks: TextBlock[];
+
   updatedTitle: string;
   updatedGenQuestion: string;
+
+
 
   constructor(private route: ActivatedRoute, private provider: FilegroupService) {}
 
@@ -36,7 +39,7 @@ export class FileopenComponent {
     console.log("id " + fileIdFromRoute);
     this.provider.getFileById(fileIdFromRoute).subscribe(response => {
       this.currentFile = response;
-      this.textBlocks = response.text_blocks;
+      // this.textBlocks = response.text_blocks;
     })
 
     //console.log(this.textBlocks);
