@@ -6,18 +6,15 @@ $color-delete-add-hover: #343A3FBF
 
 .question
   width: 100%
-  height: 50%
   padding: 12px 20px
-  resize: none
   font-size: 1.5rem
   font-weight: bold
   margin-bottom: 3%
   border-radius: 10px
-  overflow-wrap: break-word
-  overflow: clip
   border: $border-width solid transparent
   transition: all 0.15s ease-in-out
-
+  background-color: transparent
+  margin-left: 3%
 
 .content
   display: flex
@@ -29,13 +26,20 @@ span:focus
   border: $border-width solid $border-color
   outline: none
 
+.delete,
 .delete-group
   font-size: 1.5rem
   transform: rotate(45deg)
   color: $color-delete-add
   text-align: center
   transition: all 0.15s ease-in-out
+  border: none
+  background-color: transparent
 
+
+.delete:hover
+  cursor: pointer
+  color: $color-delete-add-hover
 .delete-group:hover
   cursor: pointer
   color: $color-delete-add-hover

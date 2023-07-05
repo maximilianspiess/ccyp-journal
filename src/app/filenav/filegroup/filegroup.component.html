@@ -3,8 +3,8 @@
     <h4 class="filegroup-title">{{ group.group_name }}</h4>
     <button type="button" (click)="deleteGroupById(group.id)" class="add-base delete-group">+</button>
   </div>
-  <div *ngFor="let file of files" class="filename-delete">
-    <p class="text">{{ file.file_name }}</p>
+  <div *ngFor="let file of files" (click)="getFileById(file.id)" class="filename-delete">
+    <a [title]="file.file_name" [routerLink]="['/files', file.id]" class="text">{{ file.file_name }}</a>
     <button type="button" (click)="deleteFileById(file.id)" class="text-invisible delete-file">+</button>
   </div>
   <button type="button" (click)="addFileToGroup(group.id)" class="add-base">+</button>

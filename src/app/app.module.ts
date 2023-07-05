@@ -18,11 +18,13 @@ import { ApplikationComponent } from './applikation/applikation.component';
 import {RouterModule, Routes} from "@angular/router";
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
+import {NgOptimizedImage} from "@angular/common";
 
 const appRoutes: Routes = [
-  {path: "", component: ApplikationComponent, pathMatch: "full"},
-  {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent}
+  { path: "", component: ApplikationComponent, pathMatch: "full" },
+  { path: "files/:fileId", component: FileopenComponent },
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent }
 ]
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,4 @@
 <div class="content">
-<span
-  class="title"
-  role="textbox"
-  contenteditable>
-  Lernjournal
-</span>
+  <span role="textbox" (input)="onChange($event)" contenteditable class="title">{{title}}</span>
+<!--<input class="title" role="textbox" (change)="onChange($event)" contenteditable value="Lernjorunal">-->
 </div>

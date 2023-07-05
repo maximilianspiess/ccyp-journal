@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./title.component.sass']
 })
 export class TitleComponent {
+  @Input() title;
+  @Output() textEmitter= new EventEmitter<string>();
+  text: string
+  async onChange(event: any) {
+    this.text = event.target.innerText;
+    this.textEmitter.emit(this.text)
+  }
 
 }
