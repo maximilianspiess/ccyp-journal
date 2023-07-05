@@ -1,6 +1,9 @@
 $border-width: 2px
 $border-color: #b2c3d1
 
+$color-delete-add: #343A3F40
+$color-delete-add-hover: #343A3FBF
+
 .question
   width: 100%
   height: 50%
@@ -27,13 +30,12 @@ span:focus
   outline: none
 
 .delete-group
-  width: 2rem
-  height: 2rem
   font-size: 1.5rem
-  text-decoration: none
+  transform: rotate(45deg)
+  color: $color-delete-add
   text-align: center
-  border: none
-  opacity: 0.2
+  transition: all 0.15s ease-in-out
 
 .delete-group:hover
-  opacity: 1
+  cursor: pointer
+  color: $color-delete-add-hover
