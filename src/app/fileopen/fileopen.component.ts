@@ -1,12 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {TextfieldModel} from "./textfield.model";
-import {BlockType} from "./block-type.enum";
-import {HttpClient} from "@angular/common/http";
-import {TitleComponent} from "./title/title.component";
+import {Component} from '@angular/core';
+import {TextBlockModel} from "./textBlockModel";
+import {TextfieldTypeEnum} from "./textfield-type.enum";
 import {ActivatedRoute} from "@angular/router";
 import {FilegroupService} from "../filegroup.service";
 import {File} from "../filenav/file.model";
-import {TextBlock} from "../filenav/block.model";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-fileopen',
@@ -14,14 +12,13 @@ import {TextBlock} from "../filenav/block.model";
   styleUrls: ['./fileopen.component.sass']
 })
 export class FileopenComponent {
-  // question: string;
-  // private http: HttpClient;
-  //
-  // private readonly url = "http://localhost:8080/saveFile";
-  // titel = TitleComponent.prototype.savedTitle;
-  // textfields: TextfieldModel[] = [];
-  //
-  // textfieldTypeEnum: typeof BlockType = BlockType;
+  question: string;
+  currentDate = new Date();
+  cValue = formatDate(this.currentDate, 'HH:mm-dd.MM.yyyy', 'en-US');
+  private readonly url = "http://localhost:8080/saveFile";
+  textfields: TextBlockModel[] = []
+
+  textfieldTypeEnum: typeof TextfieldTypeEnum = TextfieldTypeEnum
   currentFile: File;
   // textBlocks: TextBlock[];
 
@@ -30,8 +27,10 @@ export class FileopenComponent {
   updatedQuestion: string;
   updatedTextArea: string;
 
+  titel: string;
 
-  constructor(private route: ActivatedRoute, private provider: FilegroupService) {}
+  constructor(private route: ActivatedRoute, private provider: FilegroupService) {
+  }
 
   ngOnInit(): void {
     this.provider.getCurrentFileSubject().subscribe(id => {
@@ -60,31 +59,20 @@ export class FileopenComponent {
     console.log("onTextAreaChange: " + this.updatedTextArea);
   }
 
+  addNewTextfield(textfields: TextfieldTypeEnum) {
 
-  // addNewTextfield(textfields: BlockType) {
-  //   const newtextfield: TextfieldModel = {
-  //     textfieldtype: textfields,
-  //     content: "dies ist ein Platzhalter"
-  //   }
-  //   console.log(textfields)
-  //   this.textfields.push(newtextfield)
-  // }
-  //
-  // saveFile() {
-  //   this.http.post<any>(this.url, {
-  //     owner_id: '5',
-  //     file_name:this.titel,
-  //     creation_date:'02-1-2018',
-  //     text_blocks: this.textfields
-  //   }).subscribe(res =>{
-  //   })
-  //
-  //   console.log(this.titel)
-  // }
-
-  saveFile(): void {
-    console.log("file saved!")
+    const newtextfield: TextBlockModel = {
+      block_id: Math.random().toString(),
+      block_type: textfields,
+      block_content: "text"
+    }
+    this.textfields.push(newtextfield)
   }
 
+
+  saveFile() {
+    this.provider.saveFile(this.titel, this.textfields,this.cValue)
+    console.log(this.cValue)
+  }
 
 }

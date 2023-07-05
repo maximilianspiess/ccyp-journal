@@ -1,0 +1,6 @@
+<div *ngIf="showComponent" class="content">
+  <input [(ngModel)]="title"
+         class="title"
+         role="textbox"
+         (input)="onChange($event)">
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="showComponent" class="content">
+  <p class="delete-group" (click)="showComponent = !showComponent">+</p>
+  <input [(ngModel)]="genQuestion"
+         class="question"
+         role="textbox"
+         (input)="onChange($event)">
+  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" alt="Reload Button">
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="showComponent" class="content">
+  <p class="delete-group" (click)="showComponent = !showComponent">+</p>
+  <input [(ngModel)]="question"
+         class="question"
+         role="textbox"
+         placeholder="Schreibe eine Frage!"
+         (input)="onChange($event)">
+</div>
