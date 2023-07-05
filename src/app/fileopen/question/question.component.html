@@ -1,10 +1,8 @@
 <div *ngIf="showComponent" class="content">
   <button class="delete" (click)="showComponent = !showComponent">+</button>
   <input [(ngModel)]="question"
-    class="question"
-    role="textbox"
-    placeholder="Schreibe eine Frage?"
-    contenteditable
-    (input)="onChange($event)">
-
+         class="question"
+         role="textbox"
+         placeholder="Schreibe eine Frage!"
+         (input)="onChange($event)">
 </div>

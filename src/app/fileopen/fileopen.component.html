@@ -20,8 +20,8 @@
     <!--    <app-title [title]="currentFile.file_name"></app-title>-->
     <div *ngFor="let textBlock of currentFile.text_blocks;let i = index;">
       <div *ngIf="textBlock.block_type =='title'">
-        <app-title [title]="textBlock.block_content" (titleChange)="onTitleChange($event)"
-                   class="title-intrafile"></app-title>
+        <app-title [title]="textBlock.block_content"
+                   (titleChange)="onTitleChange($event)" class="title-intrafile"></app-title>
       </div>
 
       <div *ngIf="textBlock.block_type=='generated_question'">
@@ -29,10 +29,12 @@
                                 (genQuestionChange)="onGenQuestionChange($event)"></app-generated-question>
       </div>
       <div *ngIf="textBlock.block_type=='question'">
-        <app-question [question]="textBlock.block_content"></app-question>
+        <app-question [question]="textBlock.block_content"
+                      (questionChange)="onQuestionChange($event)"></app-question>
       </div>
       <div *ngIf="textBlock.block_type=='text_area'">
-        <app-textarea></app-textarea>
+        <app-textarea [textArea]="textBlock.block_content"
+                      (textAreaChange)="onTextAreaChange($event)"></app-textarea>
       </div>
     </div>
     <!--  <div class="dropup">-->
@@ -43,7 +45,11 @@
     <!--      <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>-->
     <!--    </div>-->
     <!--  </div>-->
-    <button (click)="saveFile()" class="save">{{ updatedTitle }}</button>
+    <button (click)="saveFile()" class="save">Save</button>
+    <h2>{{ updatedTitle }}</h2>
+    <h2>{{ updatedGenQuestion }}</h2>
+    <h2>{{ updatedQuestion }}</h2>
+    <h2>{{ updatedTextArea }}</h2>
   </div>
 
 

@@ -1,5 +1,8 @@
 <div class="content">
-  <button class="delete">+</button>
-  <input role="textbox" [(ngModel)]="genQuestion" (input)="onChange($event)" contenteditable class="question">
+  <button class="delete" (click)="showComponent = !showComponent">+</button>
+  <input [(ngModel)]="genQuestion"
+         class="question"
+         role="textbox"
+         (input)="onChange($event)">
 <!--  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">-->
 </div>

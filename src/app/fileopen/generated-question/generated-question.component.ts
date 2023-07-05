@@ -10,14 +10,11 @@ import {HttpClient} from "@angular/common/http";
 export class GeneratedQuestionComponent {
   @Input() genQuestion: string;
   @Output() genQuestionChange = new EventEmitter<string>();
+  showComponent: boolean = true;
 
-  async onChange(event: any) {
-    this.genQuestionChange.emit(event.target.innerText);
-    // console.log("gen-question.cp.ts, onChange: " + this.genQuestion);
-  }
-
-  ngOnInit(): void {
-    console.log(this.genQuestion);
+  onChange(event: any) {
+    this.genQuestionChange.emit(event.target.value);
+    // console.log("genQuestion.cp.ts, onChange: " + event.target.value);
   }
 
 

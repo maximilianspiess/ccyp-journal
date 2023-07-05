@@ -8,10 +8,11 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 export class TitleComponent {
   @Input() title: string;
   @Output() titleChange = new EventEmitter<string>();
+  showComponent: boolean = true;
 
   onChange(event: any) {
-    this.titleChange.emit(event.target.innerText);
-    // console.log("title.cp.ts, onChange: " + this.title);
+    this.titleChange.emit(event.target.value);
+    // console.log("title.cp.ts, onChange: " + event.target.value);
   }
 
 }

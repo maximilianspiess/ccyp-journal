@@ -27,7 +27,8 @@ export class FileopenComponent {
 
   updatedTitle: string;
   updatedGenQuestion: string;
-
+  updatedQuestion: string;
+  updatedTextArea: string;
 
 
   constructor(private route: ActivatedRoute, private provider: FilegroupService) {}
@@ -48,6 +49,17 @@ export class FileopenComponent {
     this.updatedGenQuestion = genQuestion;
     console.log("onGenQuestionChange: " + this.updatedGenQuestion);
   }
+
+  onQuestionChange(question: string) {
+    this.updatedQuestion = question;
+    console.log("onQuestionChange: " + this.updatedQuestion);
+  }
+
+  onTextAreaChange(textArea: string) {
+    this.updatedTextArea = textArea;
+    console.log("onTextAreaChange: " + this.updatedTextArea);
+  }
+
 
   // addNewTextfield(textfields: BlockType) {
   //   const newtextfield: TextfieldModel = {

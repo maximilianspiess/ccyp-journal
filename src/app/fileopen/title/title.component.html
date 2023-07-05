@@ -1,4 +1,7 @@
-<div class="content">
-  <input role="textbox" [(ngModel)]="title" (input)="onChange($event)" contenteditable class="title">
-<!--  <textarea role="textbox" [(ngModel)]="title" (input)="onChange($event)" contenteditable class="title">{{ title }}</textarea>-->
+<div *ngIf="showComponent" class="content">
+  <input [(ngModel)]="title"
+         class="title"
+         role="textbox"
+         (input)="onChange($event)">
 </div>
+
