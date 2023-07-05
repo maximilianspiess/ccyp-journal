@@ -38,14 +38,16 @@
       </div>
     </div>
 
-      <div class="dropup">
-        <p class="dropbtn">+</p>
-        <div class="dropup-content">
-          <button (click)="addNewTextfield(textfieldTypeEnum.TextArea)">Text</button>
-          <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>
-          <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>
-        </div>
+    <div class="dropup">
+      <div class="dropbtn">
+        <p class="dropbtn-text">+</p>
       </div>
+      <div class="dropup-content">
+        <button (click)="addNewTextfield(textfieldTypeEnum.Text)">Text</button>
+        <button (click)="addNewTextfield(textfieldTypeEnum.Question)">Question</button>
+        <button (click)="addNewTextfield(textfieldTypeEnum.GeneratedQuestion)">Generated Question</button>
+      </div>
+    </div>
 
     <button (click)="saveFile()" class="save">Save</button>
   </div>

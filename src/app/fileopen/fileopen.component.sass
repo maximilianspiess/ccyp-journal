@@ -11,19 +11,25 @@
 
 
 .dropbtn
-  margin-top: 5%
-  font-size: 18px
-  color: #000000
+  margin-top: 8%
+  font-size: 1.2rem
+  color: #798895
   font-family: inherit
+  width: 1.4rem
+  text-align: center
   font-weight: 800
+  padding: 0.7rem
   cursor: pointer
   position: relative
-  border: none
-  background: none
-  text-transform: uppercase
+  border-radius: 100px
+  background: linear-gradient(225deg, #e5f1fa, #d9f3ff)
+  box-shadow: -1px 1px 5px 0px #ADC1D0, 1px -1px 5px 0px rgba(233, 255, 255, 0.25)
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1)
   transition-duration: 400ms
   transition-property: color
+
+  .dropbtn-text
+    margin: 0
 
 .dropbtn:focus,
 .dropbtn:hover
@@ -38,7 +44,7 @@
   left: 0%
 
 
-.dropbtn:after,
+
 .dropup-content:after,
 .save:after
   content: ""
@@ -54,12 +60,10 @@
   transition-property: width, left
 
 
-
 .dropup
   margin-top: 5%
   position: relative
   display: inline-block
-
 
 
 .dropup-content
@@ -78,7 +82,7 @@
   text-decoration: none
   padding: 12px 16px
   background-color: #E5F1FAFF
-  color: black
+  color: #a0a0a0
   flex-grow: 1
   font-family: inherit
   font-weight: 750
@@ -86,7 +90,8 @@
   border: none
 
 .dropup-content button:hover
-  color: #626161
+  color: #434b52
+
 .dropup:hover .dropup-content
   display: flex
   flex-direction: row
@@ -95,7 +100,7 @@
 .save
   margin-left: 90%
   font-size: 18px
-  color: #000000
+  color: #a0a0a0
   font-family: inherit
   font-weight: 800
   cursor: pointer
@@ -109,7 +114,7 @@
 
 .save:focus,
 .save:hover
-  color: #626161
+  color: #434b52
 
 
 .save:focus:after,

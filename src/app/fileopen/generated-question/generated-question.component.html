@@ -1,8 +1,9 @@
 <div class="content">
-  <button class="delete" (click)="showComponent = !showComponent">+</button>
-  <input [(ngModel)]="genQuestion"
+  <p class="delete-group" (click)="showComponent = !showComponent">+</p>
+  <textarea [(ngModel)]="genQuestion"
          class="question"
          role="textbox"
-         (input)="onChange($event)">
-<!--  <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">-->
+            (input)="onChange($event)"
+          oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'></textarea>
+    <img ngSrc="assets/reload.png" (click)="newQuestion()" class="reload" height="47" width="44" alt="reload Button">
 </div>
