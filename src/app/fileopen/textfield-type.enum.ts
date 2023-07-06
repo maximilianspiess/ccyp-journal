@@ -1,6 +1,6 @@
 export enum TextfieldTypeEnum {
-  GeneratedQuestion="GeneratedQuestion",
-  Text="Text",
-  Question = "Question"
+  GeneratedQuestion="generated_question",
+  Text="text_area",
+  Question = "question"
 
 }

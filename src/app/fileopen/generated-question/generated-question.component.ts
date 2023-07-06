@@ -11,9 +11,12 @@ export class GeneratedQuestionComponent {
   @Input() genQuestion: string;
   @Output() genQuestionChange = new EventEmitter<string>();
   showComponent: boolean = true;
-  http: HttpClient;
+  //http: HttpClient;
   data = null;
   question = null;
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
     this.http.get<any>(this.url).subscribe(response => {

@@ -5,6 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {FilegroupService} from "../filegroup.service";
 import {File} from "../filenav/file.model";
 import {formatDate} from "@angular/common";
+import {TextBlock} from "../filenav/block.model";
 
 @Component({
   selector: 'app-fileopen',
@@ -61,12 +62,15 @@ export class FileopenComponent {
 
   addNewTextfield(textfields: TextfieldTypeEnum) {
 
-    const newtextfield: TextBlockModel = {
-      block_id: Math.random().toString(),
+    const newtextfield: TextBlock = {
+      id: Math.random(),
       block_type: textfields,
-      block_content: "text"
+      content: "text"
     }
-    this.textfields.push(newtextfield)
+    console.log(this.currentFile.text_blocks.length)
+    this.currentFile.text_blocks.push(newtextfield)
+    console.log(newtextfield)
+    console.log(this.currentFile.text_blocks.length)
   }
 
 
