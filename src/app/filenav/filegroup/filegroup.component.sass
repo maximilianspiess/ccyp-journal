@@ -39,7 +39,7 @@ $color-delete-file: #343A3F1A // 10% transparency
 
 .add-base
   width: 1.5*$font-size-18
-  height: auto
+  height: min-content
   border: none
   outline: none
   background-color: inherit
@@ -49,14 +49,15 @@ $color-delete-file: #343A3F1A // 10% transparency
   font-size: $font-size-18
   color: $color-delete-add
   transition: all 0.25s
+  cursor: pointer
 
 .add-base:hover
   color: $color-delete-add-hover
   transform: rotate(90deg)
 
-.text-invisible
+.add-base-bright
   width: 1.5*$font-size-18
-  height: auto
+  height: min-content
   border: none
   outline: none
   background-color: inherit
@@ -64,8 +65,9 @@ $color-delete-file: #343A3F1A // 10% transparency
   padding: 0
   text-align: center
   font-size: $font-size-18
-  color: $color-delete-file //transparent
+  color: $color-delete-file
   transition: all 0.25s
+  cursor: pointer
 
 .delete-group, .delete-file
   margin: 0 -0.75*$font-size-18 0 0
