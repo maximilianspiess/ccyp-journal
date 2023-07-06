@@ -23,7 +23,6 @@
         <app-title [title]="textBlock.block_content"
                    (titleChange)="onTitleChange($event)" class="title-intrafile"></app-title>
       </div>
-
       <div *ngIf="textBlock.block_type=='generated_question'">
         <app-generated-question [genQuestion]="textBlock.block_content"
                                 (genQuestionChange)="onGenQuestionChange($event)"></app-generated-question>

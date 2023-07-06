@@ -1,8 +1,10 @@
 <div *ngIf="showComponent" class="content">
-  <p class="delete-group" (click)="showComponent = !showComponent">+</p>
-  <input [(ngModel)]="question"
-         class="question"
-         role="textbox"
-         placeholder="Schreibe eine Frage!"
-         (input)="onChange($event)">
+  <p class="delete" (click)="showComponent = !showComponent">+</p>
+  <textarea [(ngModel)]="question"
+            class="question"
+            role="textbox"
+            placeholder="Schreibe eine Frage!"
+            (input)="onChange($event)"
+            oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'>
+  </textarea>
 </div>

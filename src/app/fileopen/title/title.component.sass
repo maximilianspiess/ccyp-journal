@@ -1,25 +1,35 @@
 $border-width: 2px
-$border-color: #b2c3d1
+$border-color: #343A3F1A // 10% transparency
+
+$font-size-20: 1.25em
+$font-size-24: 1.5em
+$font-size-40: 2.5em
+
+.content
+  display: flex
+  flex-direction: row
+  box-sizing: border-box
+  height: auto
+  margin: $font-size-24 15% $font-size-24 0
 
 .title
-  font-size: 2.5rem
+  width: 100%
+  height: 0.5*$font-size-40
+  margin-left: 0.5*$font-size-24
+  padding: 0.25*$font-size-24 0.5*$font-size-24
+  resize: none
+  font-size: $font-size-40
+  //font-style: italic
   border: $border-width solid transparent
-  transition: all 0.15s ease-in-out
-  padding: 12px 20px
   border-radius: 10px
-  overflow-wrap: break-word
-  overflow: clip
+  transition: all 0.15s ease-in-out
   background-color: transparent
+  word-break: break-all
+  overflow-wrap: break-word
+  overflow: clip hidden
+  font-family: 'Helvetica', Arial, sans-serif
 
 input:focus
   border: $border-width solid $border-color
   outline: none
 
-.content
-  margin-bottom: 3rem
-  margin-top: 2rem
-  width: 70%
-  padding: 12px 20px
-  resize: none
-  font-size: 1.5rem
-  font-weight: bold
